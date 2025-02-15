@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    align-items: flex-start;
+}
+
+#game {
+    text-align: center;
+    margin-right: 20px;
+}
+
+h1 {
+    margin: 0;
+    padding: 20px;
+    color: #ff0000;
+}
+
+#scoreboard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+#instructions {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#instructions h3 {
+    margin: 0 0 10px 0;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    grid-gap: 5px;
+    max-width: 400px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #333; /* Same color for all cells initially */
+    border: 2px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cell.flagged {
+    background-color: #555;
+}
+
+.cell.revealed {
+    background-color: #666;
+    cursor: default;
+}
+
+.cell.mine.revealed {
+    background-color: #ff0000; /* Highlight mine cells only when game is over */
+    color: #ffffff;
+}
+
+#reset-button, #restart-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#reset-button:hover, #restart-button:hover {
+    background-color: #e60000;
+}
+
+#game-over {
+    display: none;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+}

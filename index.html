@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="game">
+            <h1>Minesweeper</h1>
+            <div id="grid"></div>
+        </div>
+        <div id="controls">
+            <div id="scoreboard">
+                <div>Time: <span id="timer">0</span></div>
+                <div>Flags: <span id="flag-count">0</span></div>
+            </div>
+            <button id="reset-button">Reset</button>
+            <div id="instructions">
+                <h3>Controls:</h3>
+                <p id="desktop-controls">Right-click to place a flag (desktop). Left-click to dig (desktop).</p>
+                <p id="mobile-controls">Hold to place a flag (mobile). Tap to dig (mobile).</p>
+            </div>
+        </div>
+    </div>
+    <div id="game-over">
+        <h2>Game Over</h2>
+        <button id="restart-button">Play Again</button>
+    </div>
+    <audio id="click-sound" src="click.mp3"></audio>
+    <audio id="flag-sound" src="flag.mp3"></audio>
+    <audio id="mine-sound" src="mine.mp3"></audio>
+    <audio id="game-over-song" src="game-over.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
