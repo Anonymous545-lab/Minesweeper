@@ -13,6 +13,7 @@ body {
 #container {
     display: flex;
     align-items: flex-start;
+    flex-direction: column; /* Stack game and controls vertically on small screens */
 }
 
 #game {
@@ -50,20 +51,20 @@ h1 {
 
 #grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
-    grid-gap: 5px;
-    max-width: 400px;
+    grid-template-columns: repeat(auto-fill, minmax(8vw, 1fr)); /* Adjust cell size based on viewport width */
+    grid-gap: 0.5vw; /* Adjust gap based on viewport width */
+    max-width: 90vw; /* Limit max width to 90% of viewport width */
 }
 
 .cell {
-    width: 40px;
-    height: 40px;
-    background-color: #333; /* Same color for all cells initially */
+    width: 8vw; /* Adjust cell size based on viewport width */
+    height: 8vw; /* Adjust cell size based on viewport width */
+    background-color: #333;
     border: 2px solid #444;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 3vw; /* Adjust font size based on viewport width */
     cursor: pointer;
     transition: background-color 0.2s;
 }
@@ -78,7 +79,7 @@ h1 {
 }
 
 .cell.mine.revealed {
-    background-color: #ff0000; /* Highlight mine cells only when game is over */
+    background-color: #ff0000;
     color: #ffffff;
 }
 
@@ -106,4 +107,22 @@ h1 {
     background-color: #1a1a1a;
     padding: 20px;
     border-radius: 10px;
+}
+
+/* Media Query for larger screens */
+@media (min-width: 768px) {
+    #container {
+        flex-direction: row; /* Align game and controls horizontally on larger screens */
+    }
+
+    #grid {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Adjust cell size for larger screens */
+        max-width: 400px;
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
 }
