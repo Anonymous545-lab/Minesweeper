@@ -27,16 +27,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function createBoard() {
+        const grid = document.getElementById('grid');
+        const gridWidth = Math.min(window.innerWidth, 400); // Adjust width based on screen size
+        const cellSize = Math.floor(gridWidth / width); // Calculate cell size
+
         const minesArray = Array(numMines).fill('mine');
         const emptyArray = Array(width * height - numMines).fill('empty');
         const gameArray = emptyArray.concat(minesArray);
         const shuffledArray = gameArray.sort(() => Math.random() - 0.5);
-        
+
         for (let i = 0; i < width * height; i++) {
             const cell = document.createElement('div');
             cell.setAttribute('id', i);
             cell.classList.add('cell');
             cell.classList.add(shuffledArray[i]);
+            cell.style.width = `${cellSize}px`;
+            cell.style.height = `${cellSize}px`;
             grid.appendChild(cell);
 
             if (isMobile) {
