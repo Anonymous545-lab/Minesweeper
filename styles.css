@@ -14,11 +14,12 @@ body {
     display: flex;
     align-items: flex-start;
     flex-direction: column; /* Stack game and controls vertically on small screens */
+    padding: 10px;
 }
 
 #game {
     text-align: center;
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 h1 {
